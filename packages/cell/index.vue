@@ -1,5 +1,5 @@
 <template>
-  <div>
+
   <div
     :class="[
       b({
@@ -27,19 +27,22 @@
       <slot>
         <span v-text="value" />
       </slot>
+      <div
+        style="text-align: right"
+        v-if="errorMessage"
+        v-text="errorMessage"
+        :class="b('error-message')"
+      />
     </div>
+
     <slot name="right-icon">
       <icon v-if="isLink" :class="b('right-icon', arrowDirection)" name="arrow" />
     </slot>
+
     <slot name="extra" />
+
   </div>
-    <div
-      style="text-align: right;padding-right: 15px;padding-top: 10px"
-      v-if="errorMessage"
-      v-text="errorMessage"
-      :class="b('error-message')"
-    ></div>
-  </div>
+
 </template>
 
 <script>
