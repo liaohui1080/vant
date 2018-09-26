@@ -79,6 +79,7 @@ Vue.use(Cell).use(CellGroup);
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
 | icon | 左侧图标，可选值见 Icon 组件 | `String` | - |
+| error-message | 错误提醒 | `String` | - |
 | title | 左侧标题 | `String | Number` | - |
 | value | 右侧内容 | `String | Number` | - |
 | label | 标题下方的描述信息 | `String` | - |

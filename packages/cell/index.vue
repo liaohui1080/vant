@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div
     :class="[
       b({
@@ -32,6 +33,13 @@
     </slot>
     <slot name="extra" />
   </div>
+    <div
+      style="text-align: right;padding-right: 15px;padding-top: 10px"
+      v-if="errorMessage"
+      v-text="errorMessage"
+      :class="b('error-message')"
+    ></div>
+  </div>
 </template>
 
 <script>
@@ -58,6 +66,7 @@ export default create({
     title: [String, Number],
     value: [String, Number],
     arrowDirection: String,
+    errorMessage: String,
     border: {
       type: Boolean,
       default: true

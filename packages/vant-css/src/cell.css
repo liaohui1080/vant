@@ -16,7 +16,19 @@
     margin-left: 15px;
     border-bottom-width: 1px;
   }
-
+  &__error-message {
+     color: $red;
+     font-size: 12px;
+     text-align: left;
+   }
+  &--error {
+  .van-field__control {
+  &,
+  &::placeholder {
+     color: $red;
+   }
+  }
+  }
   &-group {
     background-color: $white;
   }
