@@ -20,6 +20,11 @@
         <div v-if="label" v-text="label" :class="b('label')" />
       </slot>
     </div>
+
+    <div
+      v-if="errorMessage"
+      v-text="errorMessage"
+      :class="b('error-message')"/>
     <div
       v-if="isDef(value) || $slots.default"
       :class="b('value', { alone: !$slots.title && !title })"
@@ -27,17 +32,13 @@
       <slot>
         <span v-text="value" />
       </slot>
-      <div
-        style="text-align: right"
-        v-if="errorMessage"
-        v-text="errorMessage"
-        :class="b('error-message')"
-      />
+
     </div>
 
     <slot name="right-icon">
       <icon v-if="isLink" :class="b('right-icon', arrowDirection)" name="arrow" />
     </slot>
+
 
     <slot name="extra" />
 
